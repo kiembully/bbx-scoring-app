@@ -2,12 +2,14 @@ import withPWA from "next-pwa";
 
 const nextConfig = {
   reactStrictMode: true,
-  // Add more config if needed
+  // other next.js config here
 };
 
 export default withPWA({
   ...nextConfig,
-  dest: "public",
-  register: true,
-  skipWaiting: true,
+  pwa: {
+    dest: "public",
+    register: true,
+    skipWaiting: true,
+  },
 });

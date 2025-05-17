@@ -1,6 +1,6 @@
 {
-  "name": "My Next.js PWA",
-  "short_name": "NextPWA",
+  "name": "BBX Scoring App",
+  "short_name": "BBX-SA",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",

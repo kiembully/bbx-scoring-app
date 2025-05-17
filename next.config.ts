@@ -1,15 +1,16 @@
 import withPWA from "next-pwa";
+import type { NextConfig } from "next";
 
-const nextConfig = {
-  reactStrictMode: true,
-  // other next.js config here
+const nextConfig: NextConfig = {
+  // your other config
 };
 
-export default withPWA({
-  ...nextConfig,
-  pwa: {
-    dest: "public",
-    register: true,
-    skipWaiting: true,
-  },
-});
+const pwaOptions = {
+  dest: "public",
+  register: true,
+  skipWaiting: true,
+  disable: process.env.NODE_ENV === "development",
+};
+
+// @ts-expect-error: Unreachable code error
+export default withPWA(nextConfig, pwaOptions);

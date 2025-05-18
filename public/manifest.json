@@ -2,7 +2,7 @@
   "name": "BBX Scoring App",
   "short_name": "BBX-SA",
   "start_url": "/",
-  "display": "standalone",
+  "display": "fullscreen",
   "background_color": "#ffffff",
   "theme_color": "#317EFB",
   "orientation": "landscape",

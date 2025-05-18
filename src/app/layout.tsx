@@ -15,7 +15,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "BBX Scoring App",
   description: "A tool used for scoring beyblade x matches.",
-  themeColor: "#317EFB",
+  themeColor: '#317EFB',
+  icons: {
+    icon: '/icons/icon-192x192.png',
+  },
 };
 
 export default function RootLayout({

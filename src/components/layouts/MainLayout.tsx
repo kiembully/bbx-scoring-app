@@ -1,20 +1,20 @@
-"use client"
-import React from 'react'
+'use client';
+import React from 'react';
 import InstallPromptDialog from '../InstallAppDialog';
 import PWARegister from '@/hooks/PWARegister';
 
 interface MainLayoutProps {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
 const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   return (
-    <main className='w-full'>
+    <main className="w-full">
       {children}
       <PWARegister />
       <InstallPromptDialog />
     </main>
   );
-}
+};
 
 export default MainLayout;

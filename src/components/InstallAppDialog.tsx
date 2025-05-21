@@ -1,6 +1,6 @@
-import { usePWAInstallPrompt } from "@/hooks/UsePwaInstallPrompt";
-import { useEffect, useState } from "react";
-import Swal from "sweetalert2";
+import { usePWAInstallPrompt } from '@/hooks/UsePwaInstallPrompt';
+import { useEffect, useState } from 'react';
+import Swal from 'sweetalert2';
 
 export default function InstallPromptDialog() {
   const { isPromptVisible, promptToInstall } = usePWAInstallPrompt();
@@ -11,12 +11,12 @@ export default function InstallPromptDialog() {
       setHasPrompted(true); // mark that we showed the dialog
 
       Swal.fire({
-        title: "Install this app for a better experience!",
-        icon: "info",
+        title: 'Install this app for a better experience!',
+        icon: 'info',
         showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "Install",
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Install',
       }).then((result) => {
         if (result.isConfirmed) {
           promptToInstall();

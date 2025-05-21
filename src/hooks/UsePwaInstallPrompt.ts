@@ -1,10 +1,10 @@
-"use client";
-import { useEffect, useState } from "react";
+'use client';
+import { useEffect, useState } from 'react';
 
 // Define the BeforeInstallPromptEvent type outside the hook for reuse
 type BeforeInstallPromptEvent = Event & {
   prompt: () => Promise<void>;
-  userChoice: Promise<{ outcome: "accepted" | "dismissed" }>;
+  userChoice: Promise<{ outcome: 'accepted' | 'dismissed' }>;
 };
 
 export function usePWAInstallPrompt() {
@@ -19,7 +19,7 @@ export function usePWAInstallPrompt() {
       standalone?: boolean;
     }
     const isStandalone =
-      window.matchMedia("(display-mode: standalone)").matches ||
+      window.matchMedia('(display-mode: standalone)').matches ||
       // for iOS Safari
       (window.navigator as NavigatorStandalone).standalone === true;
 
@@ -35,19 +35,19 @@ export function usePWAInstallPrompt() {
       setIsPromptVisible(true); // Show your custom install dialog
     }
 
-    window.addEventListener("beforeinstallprompt", handler);
+    window.addEventListener('beforeinstallprompt', handler);
 
-    return () => window.removeEventListener("beforeinstallprompt", handler);
+    return () => window.removeEventListener('beforeinstallprompt', handler);
   }, []);
 
   function promptToInstall() {
     if (!deferredPrompt) return;
     deferredPrompt.prompt(); // Show the browser's install prompt
     deferredPrompt.userChoice.then((choiceResult) => {
-      if (choiceResult.outcome === "accepted") {
-        console.log("User accepted the install prompt");
+      if (choiceResult.outcome === 'accepted') {
+        console.log('User accepted the install prompt');
       } else {
-        console.log("User dismissed the install prompt");
+        console.log('User dismissed the install prompt');
       }
       setDeferredPrompt(null);
       setIsPromptVisible(false);
